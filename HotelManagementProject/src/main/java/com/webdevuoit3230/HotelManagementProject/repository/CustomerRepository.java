@@ -1,14 +1,14 @@
 /**
  * 
  */
-package repository;
+package com.webdevuoit3230.HotelManagementProject.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import model.Customer;
+import com.webdevuoit3230.HotelManagementProject.model.Customer;
 
 /**
  * 

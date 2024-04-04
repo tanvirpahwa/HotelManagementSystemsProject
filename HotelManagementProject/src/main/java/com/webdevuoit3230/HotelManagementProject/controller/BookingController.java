@@ -1,12 +1,12 @@
 /**
  * 
  */
-package controller;
+package com.webdevuoit3230.HotelManagementProject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import service.BookingService;
+import com.webdevuoit3230.HotelManagementProject.service.BookingService;
 
 /**
  * 

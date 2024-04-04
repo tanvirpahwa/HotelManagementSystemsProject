@@ -1,7 +1,7 @@
 /**
  * 
  */
-package model;
+package com.webdevuoit3230.HotelManagementProject.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
