@@ -15,28 +15,21 @@ public class Booking {
     @Id
     private Long id;
     @ManyToOne
-    private Customer customer;
+    private Customer customerid;
     @ManyToOne
-    private Room room;
-    private String checkInDate;
-    private String checkOutDate;
-    private String bookingDate;
-    private String bookingStatus;
-    private String bookingPrice;
+    private Room roomid;
+    private String startDate;
+    private String endDate;
 
     public Booking() {
     }
 
-    public Booking(Long id, Customer customer, Room room, String checkInDate, String checkOutDate, String bookingDate,
-            String bookingStatus, String bookingPrice) {
+    public Booking(Long id, Customer customerid, Room roomid, String startDate, String endDate) {
         this.id = id;
-        this.customer = customer;
-        this.room = room;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.bookingDate = bookingDate;
-        this.bookingStatus = bookingStatus;
-        this.bookingPrice = bookingPrice;
+        this.customerid = customerid;
+        this.roomid = roomid;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public Long getId() {
@@ -47,60 +40,42 @@ public class Booking {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomerid() {
+        return customerid;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerid(Customer customerid) {
+        this.customerid = customerid;
     }
 
-    public Room getRoom() {
-        return room;
+    public Room getRoomid() {
+        return roomid;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRoomid(Room roomid) {
+        this.roomid = roomid;
     }
 
-    public String getCheckInDate() {
-        return checkInDate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setCheckInDate(String checkInDate) {
-        this.checkInDate = checkInDate;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public String getCheckOutDate() {
-        return checkOutDate;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setCheckOutDate(String checkOutDate) {
-        this.checkOutDate = checkOutDate;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
-    public String getBookingDate() {
-        return bookingDate;
+    @Override
+    public String toString() {
+        return "Booking [customerid=" + customerid + ", endDate=" + endDate + ", id=" + id + ", roomid=" + roomid
+                + ", startDate=" + startDate + "]";
     }
-
-    public void setBookingDate(String bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public String getBookingStatus() {
-        return bookingStatus;
-    }
-
-    public void setBookingStatus(String bookingStatus) {
-        this.bookingStatus = bookingStatus;
-    }
-
-    public String getBookingPrice() {
-        return bookingPrice;
-    }
-
-    public void setBookingPrice(String bookingPrice) {
-        this.bookingPrice = bookingPrice;
-    }
-
+      
 }

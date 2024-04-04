@@ -17,8 +17,8 @@ public class ProvidedService {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String price;
     private String description;
+    private String price;
 
     public ProvidedService() {
     }
@@ -26,8 +26,8 @@ public class ProvidedService {
     public ProvidedService(Long id, String name, String price, String description) {
         this.id = id;
         this.name = name;
-        this.price = price;
         this.description = description;
+        this.price = price;
     }
 
     public Long getId() {
@@ -46,6 +46,14 @@ public class ProvidedService {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getPrice() {
         return price;
     }
@@ -54,12 +62,9 @@ public class ProvidedService {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public String toString() {
+        return "ProvidedService [description=" + description + ", id=" + id + ", name=" + name + ", price=" + price + "]";
     }
 
 }
