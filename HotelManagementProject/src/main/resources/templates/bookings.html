@@ -15,18 +15,18 @@
     <!-- List of bookings -->
     <table border="1">
         <tr>
+            <th>Booking ID</th>
             <th>Customer ID</th>
             <th>Room ID</th>
-            <th>Service ID</th>
-            <th>Check In</th>
-            <th>Check Out</th>
+            <th>Start Date</th>
+            <th>End Date</th>
         </tr>
         <tr th:each="booking : ${bookings}">
-            <td th:text="${booking.customerId}">Customer ID</td>
-            <td th:text="${booking.roomId}">Room ID</td>
-            <td th:text="${booking.serviceId}">Service ID</td>
-            <td th:text="${booking.checkIn}">Check In</td>
-            <td th:text="${booking.checkOut}">Check Out</td>
+            <td th:text="${booking.id}">Booking ID</td>
+            <td th:text="${booking.customerid}">Customer ID</td>
+            <td th:text="${booking.roomid}">Room ID</td>
+            <td th:text="${booking.startDate}">Start Date</td>
+            <td th:text="${booking.endDate}">End Date</td>
         </tr>
     </table>
     <!-- Ability to add bookings -->
@@ -34,23 +34,19 @@
         <table>
             <tr>
                 <td>Customer ID:</td>
-                <td><input type="text" th:field="*{customerId}" /></td>
+                <td><input type="text" th:field="*{customerid}" /></td>
             </tr>
             <tr>
                 <td>Room ID:</td>
-                <td><input type="text" th:field="*{roomId}" /></td>
+                <td><input type="text" th:field="*{roomid}" /></td>
             </tr>
             <tr>
-                <td>Service ID:</td>
-                <td><input type="text" th:field="*{serviceId}" /></td>
+                <td>Start Date:</td>
+                <td><input type="text" th:field="*{startDate}" /></td>
             </tr>
             <tr>
-                <td>Check In:</td>
-                <td><input type="text" th:field="*{checkIn}" /></td>
-            </tr>
-            <tr>
-                <td>Check Out:</td>
-                <td><input type="text" th:field="*{checkOut}" /></td>
+                <td>End Date:</td>
+                <td><input type="text" th:field="*{endDate}" /></td>
             </tr>
             <tr>
                 <td><button type="submit">Submit</button></td>

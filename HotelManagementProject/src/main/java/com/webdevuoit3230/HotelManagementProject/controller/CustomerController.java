@@ -19,7 +19,7 @@ public class CustomerController {
     @GetMapping
     public String showCustomer(Model model) {
         model.addAttribute("customers", customerService.getAllCustomers());
-        model.addAttribute("customer", new Customer());  // Add this line
+        model.addAttribute("customer", new Customer()); 
         return "customers";
     }
 

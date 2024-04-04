@@ -3,6 +3,8 @@
  */
 package com.webdevuoit3230.HotelManagementProject.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -15,12 +17,12 @@ public class Room {
     private Long id;
     private String roomNumber;
     private String type;
-    private String price;
+    private BigDecimal price;
 
     public Room() {
     }
 
-    public Room(Long id, String roomNumber, String type, String status, String price) {
+    public Room(Long id, String roomNumber, String type, BigDecimal price) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.type = type;
@@ -51,11 +53,11 @@ public class Room {
         this.type = type;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

@@ -21,10 +21,10 @@
             <th>Service Price</th>
         </tr>
         <tr th:each="service : ${services}">
-            <td th:text="${service.serviceId}">Service ID</td>
-            <td th:text="${service.serviceName}">Service Name</td>
-            <td th:text="${service.serviceDescription}">Service Description</td>
-            <td th:text="${service.servicePrice}">Service Price</td>
+            <td th:text="${service.id}">Service ID</td>
+            <td th:text="${service.name}">Service Name</td>
+            <td th:text="${service.description}">Service Description</td>
+            <td th:text="${service.price}">Service Price</td>
         </tr>
     </table>
     <!-- Ability to add services -->
@@ -32,15 +32,15 @@
         <table>
             <tr>
                 <td>Service Name:</td>
-                <td><input type="text" th:field="*{serviceName}" /></td>
+                <td><input type="text" th:field="*{name}" /></td>
             </tr>
             <tr>
                 <td>Service Description:</td>
-                <td><input type="text" th:field="*{serviceDescription}" /></td>
+                <td><input type="text" th:field="*{description}" /></td>
             </tr>
             <tr>
                 <td>Service Price:</td>
-                <td><input type="text" th:field="*{servicePrice}" /></td>
+                <td><input type="text" th:field="*{price}" /></td>
             </tr>
             <tr>
                 <td><button type="submit">Submit</button></td>

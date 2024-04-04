@@ -18,14 +18,12 @@
             <th>Room ID</th>
             <th>Room Number</th>
             <th>Room Type</th>
-            <th>Room Status</th>
             <th>Room Price</th>
         </tr>
         <tr th:each="room : ${rooms}">
             <td th:text="${room.roomId}">Room ID</td>
             <td th:text="${room.roomNumber}">Room Number</td>
             <td th:text="${room.roomType}">Room Type</td>
-            <td th:text="${room.roomStatus}">Room Status</td>
             <td th:text="${room.roomPrice}">Room Price</td>
         </tr>
     </table>
@@ -39,10 +37,6 @@
             <tr>
                 <td>Room Type:</td>
                 <td><input type="text" th:field="*{roomType}" /></td>
-            </tr>
-            <tr>
-                <td>Room Status:</td>
-                <td><input type="text" th:field="*{roomStatus}" /></td>
             </tr>
             <tr>
                 <td>Room Price:</td>

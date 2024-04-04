@@ -15,16 +15,16 @@
     <!-- List of customers -->
     <table border="1">
         <tr>
-            <th>ID</th>
+            <th>Customer ID</th>
             <th>Full Name</th>
+            <th>Phone Number</th>
             <th>Email</th>
-            <th>Phone</th>
         </tr>
         <tr th:each="customer : ${customers}">
-            <td th:text="${customer.id}">ID</td>
+            <td th:text="${customer.id}">Customer ID</td>
             <td th:text="${customer.name}">Full Name</td>
+            <td th:text="${customer.phoneNumber}">Phone Number</td>
             <td th:text="${customer.email}">Email</td>
-            <td th:text="${customer.phone}">Phone</td>
         </tr>
     </table>
     <!-- Ability to add customers -->
@@ -35,12 +35,12 @@
                 <td><input type="text" th:field="*{name}" /></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input type="text" th:field="*{email}" /></td>
+                <td>Phone Number:</td>
+                <td><input type="text" th:field="*{phoneNumber}" /></td>
             </tr>
             <tr>
-                <td>Phone:</td>
-                <td><input type="text" th:field="*{phone}" /></td>
+                <td>Email:</td>
+                <td><input type="text" th:field="*{email}" /></td>
             </tr>
             <tr>
                 <td><button type="submit">Add Customer</button></td>

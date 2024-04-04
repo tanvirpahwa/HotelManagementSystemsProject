@@ -11,17 +11,17 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String phoneNumber;
     private String email;
-    private String phone;
 
     public Customer() {
     }
 
-    public Customer(Long id, String name, String email, String phone) {
+    public Customer(Long id, String name, String email, String phoneNumber) {
         this.id = id;
         this.name = name;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.phone = phone;
     }
 
     public Long getId() {
@@ -40,6 +40,15 @@ public class Customer {
         this.name = firstName;
     }
 
+    
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -48,17 +57,8 @@ public class Customer {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + "]";
+        return "Customer [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
     }
 }
