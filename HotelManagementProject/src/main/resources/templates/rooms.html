@@ -2,15 +2,56 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Rooms</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
     <h1>Rooms</h1>
-    <!-- List of rooms -->
     <th:href>
         <a href="/customers">Customers</a>
         <a href="/bookings">Bookings</a>
         <a href="/rooms">Rooms</a>
         <a href="/services">Services</a>
     </th:href>
+    <!-- List of rooms -->
+    <table border="1">
+        <tr>
+            <th>Room ID</th>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Room Status</th>
+            <th>Room Price</th>
+        </tr>
+        <tr th:each="room : ${rooms}">
+            <td th:text="${room.roomId}">Room ID</td>
+            <td th:text="${room.roomNumber}">Room Number</td>
+            <td th:text="${room.roomType}">Room Type</td>
+            <td th:text="${room.roomStatus}">Room Status</td>
+            <td th:text="${room.roomPrice}">Room Price</td>
+        </tr>
+    </table>
+    <!-- Ability to add rooms -->
+    <form action="#" th:action="@{/rooms}" th:object="${room}" method="post">
+        <table>
+            <tr>
+                <td>Room Number:</td>
+                <td><input type="text" th:field="*{roomNumber}" /></td>
+            </tr>
+            <tr>
+                <td>Room Type:</td>
+                <td><input type="text" th:field="*{roomType}" /></td>
+            </tr>
+            <tr>
+                <td>Room Status:</td>
+                <td><input type="text" th:field="*{roomStatus}" /></td>
+            </tr>
+            <tr>
+                <td>Room Price:</td>
+                <td><input type="text" th:field="*{roomPrice}" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

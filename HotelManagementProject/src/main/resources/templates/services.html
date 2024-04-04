@@ -2,15 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Services</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
     <h1>Services</h1>
-    <!-- List of services -->
     <th:href>
         <a href="/customers">Customers</a>
         <a href="/bookings">Bookings</a>
         <a href="/rooms">Rooms</a>
         <a href="/services">Services</a>
     </th:href>
+    <!-- List of services -->
+    <table border="1">
+        <tr>
+            <th>Service ID</th>
+            <th>Service Name</th>
+            <th>Service Description</th>
+            <th>Service Price</th>
+        </tr>
+        <tr th:each="service : ${services}">
+            <td th:text="${service.serviceId}">Service ID</td>
+            <td th:text="${service.serviceName}">Service Name</td>
+            <td th:text="${service.serviceDescription}">Service Description</td>
+            <td th:text="${service.servicePrice}">Service Price</td>
+        </tr>
+    </table>
+    <!-- Ability to add services -->
+    <form action="#" th:action="@{/services}" th:object="${service}" method="post">
+        <table>
+            <tr>
+                <td>Service Name:</td>
+                <td><input type="text" th:field="*{serviceName}" /></td>
+            </tr>
+            <tr>
+                <td>Service Description:</td>
+                <td><input type="text" th:field="*{serviceDescription}" /></td>
+            </tr>
+            <tr>
+                <td>Service Price:</td>
+                <td><input type="text" th:field="*{servicePrice}" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

@@ -2,15 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Bookings</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
     <h1>Bookings</h1>
-    <!-- List of bookings -->
     <th:href>
         <a href="/customers">Customers</a>
         <a href="/bookings">Bookings</a>
         <a href="/rooms">Rooms</a>
         <a href="/services">Services</a>
     </th:href>
+    <!-- List of bookings -->
+    <table border="1">
+        <tr>
+            <th>Customer ID</th>
+            <th>Room ID</th>
+            <th>Service ID</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+        </tr>
+        <tr th:each="booking : ${bookings}">
+            <td th:text="${booking.customerId}">Customer ID</td>
+            <td th:text="${booking.roomId}">Room ID</td>
+            <td th:text="${booking.serviceId}">Service ID</td>
+            <td th:text="${booking.checkIn}">Check In</td>
+            <td th:text="${booking.checkOut}">Check Out</td>
+        </tr>
+    </table>
+    <!-- Ability to add bookings -->
+    <form action="#" th:action="@{/bookings}" th:object="${booking}" method="post">
+        <table>
+            <tr>
+                <td>Customer ID:</td>
+                <td><input type="text" th:field="*{customerId}" /></td>
+            </tr>
+            <tr>
+                <td>Room ID:</td>
+                <td><input type="text" th:field="*{roomId}" /></td>
+            </tr>
+            <tr>
+                <td>Service ID:</td>
+                <td><input type="text" th:field="*{serviceId}" /></td>
+            </tr>
+            <tr>
+                <td>Check In:</td>
+                <td><input type="text" th:field="*{checkIn}" /></td>
+            </tr>
+            <tr>
+                <td>Check Out:</td>
+                <td><input type="text" th:field="*{checkOut}" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
