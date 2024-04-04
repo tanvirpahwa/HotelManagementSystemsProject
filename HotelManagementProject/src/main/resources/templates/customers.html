@@ -6,45 +6,33 @@
 </head>
 <body>
     <h1>Customers</h1>
-    <th:href>
-        <a href="/customers">Customers</a>
-        <a href="/bookings">Bookings</a>
-        <a href="/rooms">Rooms</a>
-        <a href="/services">Services</a>
-    </th:href>
+    <div>
+        <a th:href="@{/customers}">Customers</a>
+        <a th:href="@{/bookings}">Bookings</a>
+        <a th:href="@{/rooms}">Rooms</a>
+        <a th:href="@{/services}">Services</a>
+    </div>
     <!-- List of customers -->
     <table border="1">
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>ID</th>
+            <th>Full Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
         </tr>
         <tr th:each="customer : ${customers}">
-            <td th:text="${customer.firstName}">First Name</td>
-            <td th:text="${customer.lastName}">Last Name</td>
+            <td th:text="${customer.id}">ID</td>
+            <td th:text="${customer.name}">Full Name</td>
             <td th:text="${customer.email}">Email</td>
             <td th:text="${customer.phone}">Phone</td>
-            <td th:text="${customer.address}">Address</td>
-            <td th:text="${customer.city}">City</td>
-            <td th:text="${customer.state}">State</td>
-            <td th:text="${customer.zip}">Zip</td>
         </tr>
     </table>
     <!-- Ability to add customers -->
-    <form action="#" th:action="@{/customers}" th:object="${customer}" method="post">
+    <form action="#" th:action="@{/customers/add}" th:object="${customer}" method="post">
         <table>
             <tr>
-                <td>First Name:</td>
-                <td><input type="text" th:field="*{firstName}" /></td>
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td><input type="text" th:field="*{lastName}" /></td>
+                <td>Full Name:</td>
+                <td><input type="text" th:field="*{name}" /></td>
             </tr>
             <tr>
                 <td>Email:</td>
@@ -53,22 +41,6 @@
             <tr>
                 <td>Phone:</td>
                 <td><input type="text" th:field="*{phone}" /></td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><input type="text" th:field="*{address}" /></td>
-            </tr>
-            <tr>
-                <td>City:</td>
-                <td><input type="text" th:field="*{city}" /></td>
-            </tr>
-            <tr>
-                <td>State:</td>
-                <td><input type="text" th:field="*{state}" /></td>
-            </tr>
-            <tr>
-                <td>Zip:</td>
-                <td><input type="text" th:field="*{zip}" /></td>
             </tr>
             <tr>
                 <td><button type="submit">Add Customer</button></td>

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.webdevuoit3230.HotelManagementProject.model;
 
 import jakarta.persistence.Entity;
@@ -8,26 +5,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-/**
- * 
- */
 @Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String phoneNumber;
     private String email;
+    private String phone;
 
     public Customer() {
     }
 
-    public Customer(Long id, String name, String phoneNumber, String email) {
+    public Customer(Long id, String name, String email, String phone) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.email = email;
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -42,16 +36,8 @@ public class Customer {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setName(String firstName) {
+        this.name = firstName;
     }
 
     public String getEmail() {
@@ -62,8 +48,17 @@ public class Customer {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
     @Override
     public String toString() {
-        return "Customer [email=" + email + ", id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + "]";
+        return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + "]";
     }
 }
