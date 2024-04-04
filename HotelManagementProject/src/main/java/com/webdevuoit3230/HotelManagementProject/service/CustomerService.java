@@ -2,7 +2,6 @@ package com.webdevuoit3230.HotelManagementProject.service;
 
 import com.webdevuoit3230.HotelManagementProject.model.Customer;
 import com.webdevuoit3230.HotelManagementProject.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
 public class CustomerService {
     private final CustomerRepository customerRepository;
 
-    @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
