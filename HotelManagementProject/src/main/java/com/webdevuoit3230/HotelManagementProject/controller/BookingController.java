@@ -42,4 +42,5 @@ public class BookingController {
         bookingService.addBooking(booking);
         return "redirect:/bookings";
     }
+
 }

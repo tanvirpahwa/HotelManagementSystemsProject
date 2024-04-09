@@ -33,7 +33,6 @@ public class ProvidedServiceController {
     public String addProvidedService(@ModelAttribute ProvidedService providedService) {
         providedServiceService.addProvidedService(providedService);
         return "redirect:/services";
-    }
-    
+    }  
     
 }
