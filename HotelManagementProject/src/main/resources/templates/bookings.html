@@ -16,15 +16,15 @@
     <table border="1">
         <tr>
             <th>Booking ID</th>
-            <th>Customer ID</th>
-            <th>Room ID</th>
+            <th>Customer Information</th>
+            <th>Room Information</th>
             <th>Start Date</th>
             <th>End Date</th>
         </tr>
         <tr th:each="booking : ${bookings}">
             <td th:text="${booking.id}">Booking ID</td>
-            <td th:text="${booking.customerid}">Customer ID</td>
-            <td th:text="${booking.roomid}">Room ID</td>
+            <td th:text="${booking.customerid}">Customer Information</td>
+            <td th:text="${booking.roomid}">Room Information</td>
             <td th:text="${booking.startDate}">Start Date</td>
             <td th:text="${booking.endDate}">End Date</td>
         </tr>
