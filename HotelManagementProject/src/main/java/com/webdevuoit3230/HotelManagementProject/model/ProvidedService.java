@@ -66,7 +66,7 @@ public class ProvidedService {
 
     @Override
     public String toString() {
-        return "ProvidedService [description=" + description + ", id=" + id + ", name=" + name + ", price=" + price + "]";
+        return "ProvidedService [description=" + description + ", id=" + id + ", name=" + name + ", price=$" + price + "]";
     }
 
 }

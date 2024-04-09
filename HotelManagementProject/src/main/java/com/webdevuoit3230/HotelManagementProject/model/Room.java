@@ -1,5 +1,7 @@
 package com.webdevuoit3230.HotelManagementProject.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,12 +14,12 @@ public class Room {
     private Long id;
     private String roomNumber;
     private String roomType;
-    private String roomPrice;  
+    private BigDecimal roomPrice;  
 
     public Room() {
     }
 
-    public Room(Long id, String roomNumber, String roomType, String roomPrice) {
+    public Room(Long id, String roomNumber, String roomType, BigDecimal roomPrice) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.roomType = roomType;
@@ -48,16 +50,16 @@ public class Room {
         this.roomType = roomType;
     }
 
-    public String getRoomPrice() {
+    public BigDecimal getRoomPrice() {
         return roomPrice;
     }
 
-    public void setRoomPrice(String roomPrice) {
+    public void setRoomPrice(BigDecimal roomPrice) {
         this.roomPrice = roomPrice;
     }
 
     @Override
     public String toString() {
-        return "Room [id=" + id + ", roomPrice=" + roomPrice + ", roomNumber=" + roomNumber + ", roomType=" + roomType + "]";
+        return "Room id = " + id + ", Room price = $" + roomPrice + ", Room number = " + roomNumber + ", Room type = " + roomType;
     }
 }
