@@ -8,7 +8,7 @@ import com.webdevuoit3230.HotelManagementProject.model.ProvidedService;
 import com.webdevuoit3230.HotelManagementProject.service.ProvidedServiceService;
 
 @Controller
-@RequestMapping("/providedServices")
+@RequestMapping("/services")
 public class ProvidedServiceController {
     private final ProvidedServiceService providedServiceService;
 
@@ -18,21 +18,21 @@ public class ProvidedServiceController {
     
     @GetMapping
     public String showProvidedService(Model model) {
-        model.addAttribute("providedServices", providedServiceService.getAllProvidedServices());
-        model.addAttribute("providedService", new ProvidedService());
-        return "providedServices";
+        model.addAttribute("services", providedServiceService.getAllProvidedServices());
+        model.addAttribute("service", new ProvidedService());
+        return "services";
     }
 
     @GetMapping("/add")
     public String showAddProvidedServiceForm(Model model) {
-        model.addAttribute("providedService", new ProvidedService());
-        return "addProvidedService";
+        model.addAttribute("service", new ProvidedService());
+        return "addService";
     }
 
     @PostMapping("/add")
     public String addProvidedService(@ModelAttribute ProvidedService providedService) {
         providedServiceService.addProvidedService(providedService);
-        return "redirect:/providedServices";
+        return "redirect:/services";
     }
     
     
