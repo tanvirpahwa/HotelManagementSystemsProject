@@ -1,32 +1,27 @@
-/**
- * 
- */
 package com.webdevuoit3230.HotelManagementProject.model;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-/**
- * 
- */
 @Entity
 public class Room {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String roomNumber;
-    private String type;
-    private BigDecimal price;
+    private String roomType;
+    private String roomPrice;  
 
     public Room() {
     }
 
-    public Room(Long id, String roomNumber, String type, BigDecimal price) {
+    public Room(Long id, String roomNumber, String roomType, String roomPrice) {
         this.id = id;
         this.roomNumber = roomNumber;
-        this.type = type;
-        this.price = price;
+        this.roomType = roomType;
+        this.roomPrice = roomPrice;
     }
 
     public Long getId() {
@@ -45,25 +40,24 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
-    public String getType() {
-        return type;
+    public String getRoomType() {
+        return roomType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getRoomPrice() {
+        return roomPrice;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setRoomPrice(String roomPrice) {
+        this.roomPrice = roomPrice;
     }
 
     @Override
     public String toString() {
-        return "Room [id=" + id + ", price=" + price + ", roomNumber=" + roomNumber + ", type=" + type + "]";
+        return "Room [id=" + id + ", roomPrice=" + roomPrice + ", roomNumber=" + roomNumber + ", roomType=" + roomType + "]";
     }
-
 }

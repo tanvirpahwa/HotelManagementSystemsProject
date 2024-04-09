@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.webdevuoit3230.HotelManagementProject.controller;
 
 import org.springframework.stereotype.Controller;
@@ -10,9 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import com.webdevuoit3230.HotelManagementProject.model.Room;
 import com.webdevuoit3230.HotelManagementProject.service.RoomService;
 
-/**
- * 
- */
 @Controller
 @RequestMapping("/rooms")
 public class RoomController {
@@ -23,7 +17,7 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping("/rooms")
+    @GetMapping
     public String showRooms(Model model) {
         model.addAttribute("rooms", roomService.getAllRooms());
         model.addAttribute("room", new Room());

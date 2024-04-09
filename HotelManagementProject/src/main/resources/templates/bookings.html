@@ -6,12 +6,12 @@
 </head>
 <body>
     <h1>Bookings</h1>
-    <th:href>
-        <a href="/customers">Customers</a>
-        <a href="/bookings">Bookings</a>
-        <a href="/rooms">Rooms</a>
-        <a href="/services">Services</a>
-    </th:href>
+    <nav>
+        <a th:href="@{/customers}">Customers</a>
+        <a th:href="@{/bookings}">Bookings</a>
+        <a th:href="@{/rooms}">Rooms</a>
+        <a th:href="@{/services}">Services</a>
+    </nav>    
     <!-- List of bookings -->
     <table border="1">
         <tr>

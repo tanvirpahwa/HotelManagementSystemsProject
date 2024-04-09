@@ -1,18 +1,15 @@
-/**
- * 
- */
 package com.webdevuoit3230.HotelManagementProject.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
 
-/**
- * 
- */
 @Entity
 public class Booking {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
     private Customer customerid;
@@ -77,5 +74,4 @@ public class Booking {
         return "Booking [customerid=" + customerid + ", endDate=" + endDate + ", id=" + id + ", roomid=" + roomid
                 + ", startDate=" + startDate + "]";
     }
-      
 }
