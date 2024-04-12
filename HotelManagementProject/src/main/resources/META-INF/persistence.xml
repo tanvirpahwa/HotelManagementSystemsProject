@@ -5,7 +5,7 @@
     <persistence-unit name="HotelManagementProject" transaction-type="RESOURCE_LOCAL">
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:~/test;DB_CLOSE_DELAY=-1"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:hmp;DB_CLOSE_DELAY=-1"/>
             <property name="jakarta.persistence.jdbc.user" value="sa"/>
             <property name="jakarta.persistence.jdbc.password" value="password" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
