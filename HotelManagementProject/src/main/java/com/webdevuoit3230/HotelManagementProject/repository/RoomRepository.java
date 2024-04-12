@@ -9,10 +9,21 @@ import org.springframework.stereotype.Repository;
 
 import com.webdevuoit3230.HotelManagementProject.model.Room;
 
+import jakarta.transaction.Transactional;
+
 /**
  * 
  */
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Long>{
     List<Room> findByRoomNumber(String roomNumber);
+
+    @Transactional
+    default Room addRoom(Room room) {
+        return save(room);
+    }
+
+    default List<Room> getAllRooms() {
+        return findAll();
+    }
 }
